@@ -38,106 +38,30 @@ let hyebaoxiang1: Sprite = null
 let hyehero: Sprite = null
 
 export function init(){
+let list: Sprite[] = []
 sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩great, function (sprite, otherSprite) {
     info.changeScoreBy(1)
+    otherSprite.destroy()
+})
+sprites.onOverlap(SpriteKind.黄宇恩弹射物, SpriteKind.黄宇恩bad, function (sprite, otherSprite) {
     otherSprite.destroy()
 })
 controller.up.onEvent(ControllerButtonEvent.Pressed, function () {
     黄宇恩方向 = 1
 })
-sprites.onOverlap(SpriteKind.黄宇恩弹射物, SpriteKind.黄宇恩bad, function (sprite, otherSprite) {
-    otherSprite.destroy()
-})
-controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
-    if (黄宇恩肯定2 == 1) {
-        if (黄宇恩方向 == 1) {
-            黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . f f f f f f f f . . . . 
-                . . . . f e e e e e e f . . . . 
-                . . . . f e e e e e e f . . . . 
-                . . . . f f f f f f f f . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                `, hyehero, 0, -100)
-            黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
-        } else if (黄宇恩方向 == 2) {
-            黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . f f f f f f f f . . . . 
-                . . . . f e e e e e e f . . . . 
-                . . . . f e e e e e e f . . . . 
-                . . . . f f f f f f f f . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                `, hyehero, 0, 50)
-            黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
-        } else if (黄宇恩方向 == 3) {
-            黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . f f f f f f f f . . . .
-                . . . . f e e e e e e f . . . .
-                . . . . f e e e e e e f . . . .
-                . . . . f f f f f f f f . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-                . . . . . . . f f . . . . . . .
-            `, hyehero, -100, 0)
-            黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
-        } else {
-            黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . f f f f f f f f . . . . 
-                . . . . f e e e e e e f . . . . 
-                . . . . f e e e e e e f . . . . 
-                . . . . f f f f f f f f . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                `, hyehero, 50, 0)
-            黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
-        }
-    }
+controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
+    黄宇恩方向 = 2
 })
 sprites.onOverlap(SpriteKind.黄宇恩弹射物, SpriteKind.黄宇恩鬼, function (sprite, otherSprite) {
     otherSprite.destroy()
+    info.changeScoreBy(1)
 })
 gamejam.onMyGameUpdateInterval(500, function () {
 	
+})
+sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩鬼, function (sprite, otherSprite) {
+    info.changeLifeBy(-1)
+    pause(500)
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (hyehero.overlapsWith(hyebaoxiang1)) {
@@ -228,12 +152,8 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         }
     }
 })
-sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩鬼, function (sprite, otherSprite) {
-    info.changeLifeBy(-1)
-    pause(500)
-})
-controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
-    黄宇恩方向 = 3
+controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
+    黄宇恩方向 = 4
 })
 sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.hyehelp, function (sprite, otherSprite) {
     钥匙1数 = 1
@@ -244,53 +164,96 @@ sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩bad, function (sprit
     otherSprite.destroy()
 })
 info.onCountdownEnd(function () {
-    黄宇恩肯定 = 99
-    game.splash("恭喜你拿到了宝物！")
-    game.splash("啊！有鬼！")
-    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩great)
-    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩bad)
-    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩其他)
-    cubicbird.destroyAllSpriteOfKind(SpriteKind.hyefood)
-    tiles.setTilemap(tilemap`hyelevel_0`)
-    info.setLife(10)
-    for (let index = 0; index < 10; index++) {
-        黄宇恩鬼 = sprites.create(img`
-            ........................
-            ........................
-            ........................
-            ........................
-            ..........ffff..........
-            ........ff1111ff........
-            .......fb111111bf.......
-            .......f11111111f.......
-            ......fd11111111df......
-            ......fd11111111df......
-            ......fddd1111dddf......
-            ......fbdbfddfbdbf......
-            ......fcdcf11fcdcf......
-            .......fb111111bf.......
-            ......fffcdb1bdffff.....
-            ....fc111cbfbfc111cf....
-            ....f1b1b1ffff1b1b1f....
-            ....fbfbffffffbfbfbf....
-            .........ffffff.........
-            ...........fff..........
-            ........................
-            ........................
-            ........................
-            ........................
-            `, SpriteKind.黄宇恩鬼)
-        黄宇恩鬼.setVelocity(randint(-100, 100), randint(-100, 100))
-        黄宇恩鬼.setPosition(randint(50, 180), randint(20, 100))
-    }
-    hyehero.setPosition(16, 96)
-    game.splash("鬼们正在跳舞，趁机逃走吧！")
+    结束()
+    gamejam.roomFinished(true)
 })
 sprites.onOverlap(SpriteKind.hyehelp2, SpriteKind.hyeplayer, function (sprite, otherSprite) {
 	
 })
-controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
-    黄宇恩方向 = 4
+controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
+    if (黄宇恩肯定2 == 1) {
+        if (黄宇恩方向 == 1) {
+            黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . . f e e e e e e f . . . . 
+                . . . . f e e e e e e f . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                `, hyehero, 0, -100)
+            黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
+        } else if (黄宇恩方向 == 2) {
+            黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . . f e e e e e e f . . . . 
+                . . . . f e e e e e e f . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                `, hyehero, 0, 50)
+            黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
+        } else if (黄宇恩方向 == 3) {
+            黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . . f e e e e e e f . . . . 
+                . . . . f e e e e e e f . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                `, hyehero, -100, 0)
+            黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
+        } else {
+            黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . . f e e e e e e f . . . . 
+                . . . . f e e e e e e f . . . . 
+                . . . . f f f f f f f f . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                . . . . . . . f f . . . . . . . 
+                `, hyehero, 50, 0)
+            黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
+        }
+    }
 })
 function 苹果 () {
     黄宇恩苹果黄 = sprites.create(img`
@@ -377,9 +340,6 @@ function 苹果 () {
     黄宇恩苹果红.follow(hyehero, 50)
     pause(1000)
 }
-controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
-    黄宇恩方向 = 2
-})
 scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`hyetile2`, function (sprite, location) {
     if (hyekending == 0) {
         if (controller.A.isPressed()) {
@@ -456,6 +416,9 @@ scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`hyetile4`, function (sprit
         }
     }
 })
+controller.left.onEvent(ControllerButtonEvent.Pressed, function () {
+    黄宇恩方向 = 3
+})
 function 结束 () {
     cubicbird.destroyAllSpriteOfKind(SpriteKind.hyeplayer)
     cubicbird.destroyAllSpriteOfKind(SpriteKind.hyefood)
@@ -471,7 +434,6 @@ sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩其他, function (sp
     info.changeScoreBy(3)
     otherSprite.destroy()
 })
-
 tiles.setTilemap(tilemap`hyelevel_1`)
 hyehero = sprites.create(img`
     . . . . . . f f f f . . . . . . 
@@ -553,6 +515,30 @@ hyehero.setPosition(80, 60)
 hyebaoxiang2.setPosition(10, 110)
 hyebaoxiang3.setPosition(150, 10)
 forever(function () {
+    if (黄宇恩肯定 == 1) {
+        if (info.life() <= -10) {
+            结束()
+            gamejam.roomFinished(false)
+        }
+    }
+})
+forever(function () {
+    while (黄宇恩肯定3 == 1) {
+        while (info.score() == 10) {
+            结束()
+            gamejam.roomFinished(true)
+        }
+    }
+})
+forever(function () {
+    while (黄宇恩肯定3 == 1) {
+        pause(1000)
+        for (let 值 of list) {
+            值.setVelocity(randint(-100, 100), randint(-100, 100))
+        }
+    }
+})
+forever(function () {
     if (黄宇恩肯定 == 3) {
         苹果()
         info.startCountdown(2)
@@ -568,4 +554,5 @@ forever(function () {
         gamejam.roomFinished(false)
     }
 })
-}}
+}
+}
