@@ -80,13 +80,13 @@ namespace myTiles {
     helpers._registerFactory("tile", function(name: string) {
         switch(helpers.stringTrim(name)) {
             case "transparency16":return transparency16;
-            case "hyetile2":return tile2;
-            case "hyetile3":return tile3;
-            case "hyetile4":return tile4;
-            case "hyetile1":return tile1;
-            case "hyetile5":return tile5;
-            case "hyetile6":return tile6;
-            case "hyetile7":return tile7;
+            case "hyetile2":return hyetile2;
+            case "hyetile3":return hyetile3;
+            case "hyetile4":return hyetile4;
+            case "hyetile1":return hyetile1;
+            case "hyetile5":return hyetile5;
+            case "hyetile6":return hyetile6;
+            case "hyetile7":return hyetile7;
         }
         return null;
     })
