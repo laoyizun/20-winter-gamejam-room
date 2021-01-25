@@ -36,6 +36,7 @@ namespace myTiles {
         switch(helpers.stringTrim(name)) {
             case "transparency16":return transparency16;
         }
+    
         return null;
     })
 
