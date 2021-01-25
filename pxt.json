@@ -3,7 +3,7 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "cubicbird-helper-blocks": "github:laoyizun/cubicbird-helper-blocks#master",
+        "cubicbird-helper-blocks": "github:laoyizun/cubicbird-helper-blocks#v0.6.0",
         "cubicbird-game-jam": "github:felixtsu/cubicbird-game-jam#v0.0.9"
     },
     "files": [
