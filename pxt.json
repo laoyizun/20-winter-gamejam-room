@@ -4,7 +4,7 @@
     "dependencies": {
         "device": "*",
         "cubicbird-helper-blocks": "github:laoyizun/cubicbird-helper-blocks#v0.6.0",
-        "cubicbird-game-jam": "github:felixtsu/cubicbird-game-jam#v0.0.9"
+        "cubicbird-game-jam": "github:felixtsu/cubicbird-game-jam#v0.0.10"
     },
     "files": [
         "main.blocks",
