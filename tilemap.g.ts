@@ -38,7 +38,7 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, [myTiles.transparency16,sprites.castle.tileDarkGrass2,sprites.castle.tileDarkGrass3,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile1,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.castle.tileDarkGrass1], TileScale.Sixteen);
- 
+
             case "level_0":return tiles.createTilemap(hex`10001000070404040404040404040404040404050311111111111111111111111111110603111111111111111111111111111106031111111111111111111111111111060311111111111111111111111111110603111111111111111111111111111106031111111111110f0e10111111111106031111111111110c000a111111111106031111111111110d090b11111111110603111111111111111111111111111106031111111111111111111111111111060311111111111111111111111111110603111111111111111111111111111106031111111111111111111111111111060311111111111111111111111111110601020202020202020202020202020208`, img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -57,7 +57,6 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `, [myTiles.transparency16,sprites.dungeon.greenOuterSouthEast,sprites.dungeon.greenOuterSouth0,sprites.dungeon.greenOuterWest1,sprites.dungeon.greenOuterNorth0,sprites.dungeon.greenOuterNorthEast,sprites.dungeon.greenOuterEast0,sprites.dungeon.greenOuterNorthWest,sprites.dungeon.greenOuterSouthWest,sprites.dungeon.purpleOuterSouth2,sprites.dungeon.purpleOuterEast2,sprites.dungeon.purpleOuterSouthWest,sprites.dungeon.purpleOuterWest2,sprites.dungeon.purpleOuterSouthEast,sprites.dungeon.purpleOuterNorth2,sprites.dungeon.purpleOuterNorthWest,sprites.dungeon.purpleOuterNorthEast,sprites.castle.tilePath5], TileScale.Sixteen);
-
             case "level_1":return tiles.createTilemap(hex`1000100002020202020202020202020202020202020202010202020202020202020202020202020202020202020201020202020202020202020201020202020202020202020202020202020202020202020202020202020202020202020202020102020202020102020201020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202010202020202020202020201020202020202020202020202020202020202020202020202020202020102020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202020202`, img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
