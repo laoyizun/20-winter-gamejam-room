@@ -3,14 +3,19 @@
     "description": "",
     "dependencies": {
         "device": "*",
-        "cubicbird-game-jam": "github:laoyizun/cubicbird-game-jam#master",
-        "cubicbird-helper-blocks": "github:laoyizun/cubicbird-helper-blocks#master"
+        "cubicbird-helper-blocks": "github:laoyizun/cubicbird-helper-blocks#master",
+        "cubicbird-game-jam": "github:felixtsu/cubicbird-game-jam#v0.0.9"
     },
     "files": [
         "main.blocks",
         "main.ts",
         "README.md",
-        "assets.json"
+        "assets.json",
+        "hyeroom.ts",
+        "liziroom.ts",
+        "wjyroom.ts",
+        "tilemap.g.jres",
+        "tilemap.g.ts"
     ],
     "testFiles": [
         "test.ts"
@@ -22,5 +27,5 @@
     "supportedTargets": [
         "arcade"
     ],
-    "preferredEditor": "blocksprj"
+    "preferredEditor": "tsprj"
 }
