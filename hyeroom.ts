@@ -92,23 +92,23 @@ controller.B.onEvent(ControllerButtonEvent.Pressed, function () {
             黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
         } else if (黄宇恩方向 == 3) {
             黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . f f f f f f f f . . . . 
-                . . . . f e e e e e e f . . . . 
-                . . . . f e e e e e e f . . . . 
-                . . . . f f f f f f f f . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                . . . . . . . f f . . . . . . . 
-                `, hyehero, -100, 0)
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . f f f f f f f f . . . .
+                . . . . f e e e e e e f . . . .
+                . . . . f e e e e e e f . . . .
+                . . . . f f f f f f f f . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+                . . . . . . . f f . . . . . . .
+            `, hyehero, -100, 0)
             黄宇恩弹射物2.setKind(SpriteKind.黄宇恩弹射物)
         } else {
             黄宇恩弹射物2 = sprites.createProjectileFromSprite(img`
@@ -210,7 +210,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
     if (hyehero.overlapsWith(hyebaoxiang2)) {
         if (钥匙1数 == 1) {
-            tiles.setTilemap(tilemap`level`)
+            tiles.setTilemap(tilemap`hyelevel`)
             hyebaoxiang2.say("下面有三个方块", 2000)
             hyebaoxiang2.say("你去摸一下红方块", 2000)
             hyekending = 1
@@ -219,7 +219,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
     if (hyehero.overlapsWith(hyebaoxiang3)) {
         if (yaoshi2shu == 1) {
-            tiles.setTilemap(tilemap`level`)
+            tiles.setTilemap(tilemap`hyelevel`)
             game.splash("按b射出子弹")
             game.splash("躲开黄色，碰到绿色，打死红色！")
             黄宇恩肯定 = 3
@@ -251,7 +251,7 @@ info.onCountdownEnd(function () {
     cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩bad)
     cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩其他)
     cubicbird.destroyAllSpriteOfKind(SpriteKind.hyefood)
-    tiles.setTilemap(tilemap`level_0`)
+    tiles.setTilemap(tilemap`hyelevel_0`)
     info.setLife(10)
     for (let index = 0; index < 10; index++) {
         黄宇恩鬼 = sprites.create(img`
@@ -380,7 +380,7 @@ function 苹果 () {
 controller.down.onEvent(ControllerButtonEvent.Pressed, function () {
     黄宇恩方向 = 2
 })
-scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`tile2`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`hyetile2`, function (sprite, location) {
     if (hyekending == 0) {
         if (controller.A.isPressed()) {
             game.splash("yes！")
@@ -429,7 +429,7 @@ sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.hyehelp2, function (sprite, o
     yaoshi2shu = 1
     otherSprite.destroy()
 })
-scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`tile3`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`hyetile3`, function (sprite, location) {
     if (hyekending == 1) {
         game.splash("黄：我下面没有钥匙")
         game.splash("红：我下面有钥匙")
@@ -447,7 +447,7 @@ scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`tile3`, function (sprite, 
         }
     }
 })
-scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`tile4`, function (sprite, location) {
+scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`hyetile4`, function (sprite, location) {
     if (hyekending == 0) {
         if (controller.A.isPressed()) {
             game.splash("啊！有蛇！")
@@ -472,7 +472,7 @@ sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩其他, function (sp
     otherSprite.destroy()
 })
 
-tiles.setTilemap(tilemap`level_1`)
+tiles.setTilemap(tilemap`hyelevel_1`)
 hyehero = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
