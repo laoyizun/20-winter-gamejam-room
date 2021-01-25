@@ -37,7 +37,7 @@ namespace myTiles {
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, [myTiles.transparency16,sprites.castle.tileDarkGrass2,sprites.castle.tileDarkGrass3,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile1,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.castle.tileDarkGrass1], TileScale.Sixteen);
+`, [myTiles.transparency16,sprites.castle.tileDarkGrass2,sprites.castle.tileDarkGrass3,myTiles.hyetile2,myTiles.hyetile3,myTiles.hyetile4,myTiles.hyetile1,myTiles.hyetile5,myTiles.hyetile6,myTiles.hyetile7,sprites.castle.tileDarkGrass1], TileScale.Sixteen);
 
             case "hyelevel_0":return tiles.createTilemap(hex`10001000070404040404040404040404040404050311111111111111111111111111110603111111111111111111111111111106031111111111111111111111111111060311111111111111111111111111110603111111111111111111111111111106031111111111110f0e10111111111106031111111111110c000a111111111106031111111111110d090b11111111110603111111111111111111111111111106031111111111111111111111111111060311111111111111111111111111110603111111111111111111111111111106031111111111111111111111111111060311111111111111111111111111110601020202020202020202020202020208`, img`
 . . . . . . . . . . . . . . . . 
