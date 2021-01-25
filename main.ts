@@ -10,6 +10,4 @@ gamejam.registerRoom(function(){
  //   gamejam.drawNextRoom('吴俊毅','Maze Room')
   //  wjyroom.init()
 })
-tiles.setTilemap(tilemap`级别1`)
-
 gamejam.startGameJam() 
