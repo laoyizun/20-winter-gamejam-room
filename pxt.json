@@ -4,7 +4,7 @@
     "dependencies": {
         "device": "*",
         "cubicbird-helper-blocks": "github:felixtsu/cubicbird-helper-blocks#v0.6.1",
-        "cubicbird-game-jam": "github:felixtsu/cubicbird-game-jam#v0.0.10",
+        "cubicbird-game-jam": "github:felixtsu/cubicbird-game-jam#v0.0.9",
         "color-coded-tilemap": "*",
         "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.0",
         "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0",
