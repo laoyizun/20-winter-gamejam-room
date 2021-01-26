@@ -231,6 +231,7 @@ case "lizilevel1":return tiles.createTilemap(hex`1000100002040301010301010101030
             case "hyetile5":return hyetile5;
             case "hyetile6":return hyetile6;
             case "hyetile7":return hyetile7;
+            case "hyetile8":return hyetile8;
           case "wjytile1":return wjytile1;
           case "wjytile2":return wjytile2;
           case "wjytile3":return wjytile3;
