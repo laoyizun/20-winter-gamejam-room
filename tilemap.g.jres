@@ -45,7 +45,12 @@
         "mimeType": "image/x-mkcd-f4",
         "tilemapTile": true
     },
-
+    "tile9": {
+        "data": "hwQQABAAAABERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERERA==",
+        "mimeType": "image/x-mkcd-f4",
+        "tilemapTile": true,
+        "displayName": "Temporary asset"
+    },
 
     "wjytile1": {
         "data": "hwQQABAAAADu7u7u7u7u7kTk7u7uRETu7u5EROTu7u7u7uTu7u7u7u5E7kTuRO7u7u7u7u7u7u5O5ERERO7u7k7u7u7u7u7uTu5ERORE7u7u7kTuROTu7kTk7u7u7u7u7u5O5E7u7u7uTkRERO5E5O7u7u7u7uTu7u5ERO7u7u7u7u7k7u7u7g==",
