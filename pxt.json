@@ -7,7 +7,8 @@
         "cubicbird-game-jam": "github:felixtsu/cubicbird-game-jam#v0.0.10",
         "color-coded-tilemap": "*",
         "pxt-status-bar": "github:jwunderl/pxt-status-bar#v0.4.0",
-        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0"
+        "arcade-sprite-data": "github:microsoft/arcade-sprite-data#v0.1.0",
+        "pxt-lantern": "github:felixtsu/pxt-lantern#v0.1.7"
     },
     "files": [
         "main.blocks",
