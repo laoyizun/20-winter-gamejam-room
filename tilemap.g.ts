@@ -32,15 +32,11 @@ namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const wjytile6 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    export const wjytile7 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._tile
     export const wjytile8 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const wjytile9 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const wjytile10 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._tile
-    export const wjytile11 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const wjytile12 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
@@ -62,11 +58,7 @@ namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const wjytile21 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    export const wjytile22 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._tile
     export const wjytile23 = image.ofBuffer(hex``);
-    //% fixedInstance jres blockIdentity=images._tile
-    export const wjytile24 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const wjytile25 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
@@ -213,11 +205,9 @@ case "lizilevel1":return tiles.createTilemap(hex`1000100002040301010301010101030
           case "wjytile4":return wjytile4;
           case "wjytile5":return wjytile5;
           case "wjytile6":return wjytile6;
-          case "wjytile7":return wjytile7;
           case "wjytile8":return wjytile8;
           case "wjytile9":return wjytile9;
           case "wjytile10":return wjytile10;
-          case "wjytile11":return wjytile11;
           case "wjytile12":return wjytile12;
           case "wjytile13":return wjytile13;
           case "wjytile14":return wjytile14;
@@ -228,9 +218,7 @@ case "lizilevel1":return tiles.createTilemap(hex`1000100002040301010301010101030
           case "wjytile19":return wjytile19;
           case "wjytile20":return wjytile20;
           case "wjytile21":return wjytile21;
-          case "wjytile22":return wjytile22;
           case "wjytile23":return wjytile23;
-          case "wjytile24":return wjytile24;
           case "wjytile25":return wjytile25;
           case "wjytile26":return wjytile26;
           case "wjytile27":return wjytile27;
