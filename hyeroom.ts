@@ -9,9 +9,8 @@ namespace SpriteKind {
     export const 黄宇恩弹射物 = SpriteKind.create()
     export const 黄宇恩鬼 = SpriteKind.create()
 }
-
 namespace hyeroom{
-let hyeyaoshi2: Sprite = null
+    let hyeyaoshi2: Sprite = null
 let 黄宇恩苹果红: Sprite = null
 let 黄宇恩苹果绿: Sprite = null
 let 黄宇恩苹果黄: Sprite = null
@@ -35,10 +34,15 @@ let hyebaoxiang3: Sprite = null
 let hyebaoxiang2: Sprite = null
 let hyebaoxiang1: Sprite = null
 let hyehero: Sprite = null
+let 黄宇恩tail_list4: tiles.Location[] = []
+let 黄宇恩tail_list1: tiles.Location[] = []
+let 黄宇恩tile_list2: tiles.Location[] = []
+let 黄宇恩_tile_list3: tiles.Location[] = []
     export function init(){
 scene.onOverlapTile(SpriteKind.hyeplayer, sprites.builtin.forestTiles29, function (sprite, location) {
-    if (!(yaoshi2shu == 1)) {
-        hyehero.x += -10
+    if (yaoshi2shu == 0) {
+        hyehero.y += -10
+        game.splash("没有钥匙")
     }
 })
 sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩great, function (sprite, otherSprite) {
@@ -72,89 +76,95 @@ scene.onHitWall(SpriteKind.hyeplayer, function (sprite, location) {
 })
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     if (hyehero.overlapsWith(hyebaoxiang1)) {
-        hyecishu = 10
-        for (let index = 0; index < hyecishu; index++) {
-            hyesuijishu = randint(0, 50)
-            hyesuijishu2 = randint(0, 50)
-            hyesuijishu3 = randint(1, 2)
-            if (hyesuijishu3 == 1) {
-                if (game.askForNumber("" + hyesuijishu + "+" + ("" + hyesuijishu2) + "=?") == hyesuijishu + hyesuijishu2) {
-                    hyecishu += -1
-                } else {
-                    hyecishu = 10
-                    game.splash("错！")
-                    game.splash("重新来吧")
+        if (钥匙1数 == 0) {
+            hyecishu = 10
+            for (let index = 0; index < hyecishu; index++) {
+                hyesuijishu = randint(0, 50)
+                hyesuijishu2 = randint(0, 50)
+                hyesuijishu3 = randint(1, 2)
+                if (hyesuijishu3 == 1) {
+                    if (game.askForNumber("" + hyesuijishu + "+" + ("" + hyesuijishu2) + "=?") == hyesuijishu + hyesuijishu2) {
+                        hyecishu += -1
+                    } else {
+                        hyecishu = 10
+                        game.splash("错！")
+                        game.splash("重新来吧")
+                    }
+                }
+                if (hyesuijishu3 == 2) {
+                    if (hyesuijishu < hyesuijishu2) {
+                        hyebaoliu = hyesuijishu
+                        hyesuijishu = hyesuijishu2
+                        hyesuijishu2 = hyebaoliu
+                    }
+                    if (game.askForNumber("" + hyesuijishu + "-" + ("" + hyesuijishu2) + "=?") == hyesuijishu - hyesuijishu2) {
+                        hyecishu += -1
+                    } else {
+                        hyecishu = 10
+                        game.splash("错！")
+                        game.splash("重新来吧")
+                    }
                 }
             }
-            if (hyesuijishu3 == 2) {
-                if (hyesuijishu < hyesuijishu2) {
-                    hyebaoliu = hyesuijishu
-                    hyesuijishu = hyesuijishu2
-                    hyesuijishu2 = hyebaoliu
-                }
-                if (game.askForNumber("" + hyesuijishu + "-" + ("" + hyesuijishu2) + "=?") == hyesuijishu - hyesuijishu2) {
-                    hyecishu += -1
-                } else {
-                    hyecishu = 10
-                    game.splash("错！")
-                    game.splash("重新来吧")
-                }
-            }
+            hyebaoxiang1.setImage(img`
+                . b b b b b b b b b b b b b b . 
+                b e 4 4 4 4 4 4 4 4 4 4 4 4 4 b 
+                b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
+                b e e 4 4 4 4 4 4 4 4 4 4 e e b 
+                b b b b b b b d d b b b b b b b 
+                . b b b b b b c c b b b b b b . 
+                b c c c c c b c c b c c c c c b 
+                b c c c c c c b b c c c c c c b 
+                b c c c c c c c c c c c c c c b 
+                b c c c c c c c c c c c c c c b 
+                b b b b b b b b b b b b b b b b 
+                b e e e e e e e e e e e e e e b 
+                b e e e e e e e e e e e e e e b 
+                b c e e e e e e e e e e e e c b 
+                b b b b b b b b b b b b b b b b 
+                . b b . . . . . . . . . . b b . 
+                `)
+            hye钥匙1 = sprites.create(img`
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . 4 4 4 4 . . . . . 
+                . . . . . . . 4 . . 4 . . . . . 
+                . . . . . . . 4 4 4 4 . . . . . 
+                . . . . . . . 4 . . . . . . . . 
+                . . . . . . . 4 . . . . . . . . 
+                . . . . . . . 4 4 4 4 . . . . . 
+                . . . . . . . 4 . . . . . . . . 
+                . . . . . . . 4 4 4 4 . . . . . 
+                . . . . . . . 4 . . . . . . . . 
+                . . . . . . . 4 . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                . . . . . . . . . . . . . . . . 
+                `, SpriteKind.hyehelp)
+            hye钥匙1.setPosition(30, 20)
         }
-        hyebaoxiang1.setImage(img`
-            . b b b b b b b b b b b b b b . 
-            b e 4 4 4 4 4 4 4 4 4 4 4 4 4 b 
-            b e 4 4 4 4 4 4 4 4 4 4 4 4 e b 
-            b e e 4 4 4 4 4 4 4 4 4 4 e e b 
-            b b b b b b b d d b b b b b b b 
-            . b b b b b b c c b b b b b b . 
-            b c c c c c b c c b c c c c c b 
-            b c c c c c c b b c c c c c c b 
-            b c c c c c c c c c c c c c c b 
-            b c c c c c c c c c c c c c c b 
-            b b b b b b b b b b b b b b b b 
-            b e e e e e e e e e e e e e e b 
-            b e e e e e e e e e e e e e e b 
-            b c e e e e e e e e e e e e c b 
-            b b b b b b b b b b b b b b b b 
-            . b b . . . . . . . . . . b b . 
-            `)
-        hye钥匙1 = sprites.create(img`
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . 4 4 4 4 . . . . . 
-            . . . . . . . 4 . . 4 . . . . . 
-            . . . . . . . 4 4 4 4 . . . . . 
-            . . . . . . . 4 . . . . . . . . 
-            . . . . . . . 4 . . . . . . . . 
-            . . . . . . . 4 4 4 4 . . . . . 
-            . . . . . . . 4 . . . . . . . . 
-            . . . . . . . 4 4 4 4 . . . . . 
-            . . . . . . . 4 . . . . . . . . 
-            . . . . . . . 4 . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            . . . . . . . . . . . . . . . . 
-            `, SpriteKind.hyehelp)
-        hye钥匙1.setPosition(30, 20)
     }
     if (hyehero.overlapsWith(hyebaoxiang2)) {
-        tiles.setTileAt(tiles.getTileLocation(12, 2), assets.tile`hyetile8`)
-        tiles.setTileAt(tiles.getTileLocation(10, 0), assets.tile`hyetile2`)
-        tiles.setTileAt(tiles.getTileLocation(12, 0), assets.tile`hyetile3`)
-        tiles.setTileAt(tiles.getTileLocation(14, 0), assets.tile`hyetile4`)
-        hyebaoxiang2.say("下面有三个方块", 2000)
-        hyebaoxiang2.say("你去摸一下橙色方块", 2000)
-        hyekending = 1
-        钥匙1数 = 0
+        if (钥匙1数 == 1) {
+            tiles.setTileAt(tiles.getTileLocation(12, 2), assets.tile`hyetile8`)
+            tiles.setTileAt(tiles.getTileLocation(10, 0), assets.tile`hyetile2`)
+            tiles.setTileAt(tiles.getTileLocation(12, 0), assets.tile`hyetile3`)
+            tiles.setTileAt(tiles.getTileLocation(14, 0), assets.tile`hyetile4`)
+            hyebaoxiang2.say("下面有三个方块", 2000)
+            hyebaoxiang2.say("你去摸一下橙色方块", 2000)
+            hyekending = 1
+            钥匙1数 = 2
+        }
     }
     if (hyehero.overlapsWith(hyebaoxiang3)) {
-        game.splash("按b射出子弹")
-        game.splash("躲开黄色，碰到绿色，打死红色！")
-        黄宇恩肯定 = 3
-        黄宇恩肯定2 = 1
-        yaoshi2shu = 0
+        if (yaoshi2shu == 1) {
+            game.splash("按b射出子弹")
+            game.splash("躲开黄色，碰到绿色，打死红色！")
+            黄宇恩肯定 = 3
+            黄宇恩肯定2 = 1
+            yaoshi2shu = 2
+        }
     }
 })
 controller.right.onEvent(ControllerButtonEvent.Pressed, function () {
@@ -164,6 +174,29 @@ sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.hyehelp, function (sprite, ot
     钥匙1数 = 1
     otherSprite.destroy()
 })
+function hyegaitu (tileList: number) {
+    if (tileList == 1) {
+        for (let 值 of 黄宇恩tail_list1) {
+            tiles.setWallAt(值, false)
+            tiles.setTileAt(值, sprites.castle.tileDarkGrass3)
+        }
+    } else if (tileList == 2) {
+        for (let 值 of 黄宇恩tile_list2) {
+            tiles.setWallAt(值, false)
+            tiles.setTileAt(值, sprites.castle.tileDarkGrass3)
+        }
+    } else if (tileList == 3) {
+        for (let 值 of 黄宇恩_tile_list3) {
+            tiles.setWallAt(值, false)
+            tiles.setTileAt(值, sprites.castle.tileDarkGrass3)
+        }
+    } else {
+        for (let 值 of 黄宇恩tail_list4) {
+            tiles.setWallAt(值, false)
+            tiles.setTileAt(值, sprites.castle.tileDarkGrass3)
+        }
+    }
+}
 sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩bad, function (sprite, otherSprite) {
     info.changeScoreBy(-2)
     otherSprite.destroy()
@@ -172,12 +205,16 @@ info.onCountdownEnd(function () {
     黄宇恩肯定 = 99
     game.splash("恭喜你拿到了宝物！")
     game.splash("啊！有鬼！")
-    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩great)
-    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩bad)
-    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩其他)
-    cubicbird.destroyAllSpriteOfKind(SpriteKind.hyefood)
-    tiles.setTilemap(tilemap`hyelevel_0`)
     info.setLife(10)
+    hyegaitu(1)
+    hyegaitu(2)
+    hyegaitu(3)
+    hyegaitu(4)
+    tiles.setTileAt(tiles.getTileLocation(10, 0), sprites.castle.tileDarkGrass3)
+    tiles.setTileAt(tiles.getTileLocation(12, 0), sprites.castle.tileDarkGrass3)
+    tiles.setTileAt(tiles.getTileLocation(14, 0), sprites.castle.tileDarkGrass3)
+    tiles.setTileAt(tiles.getTileLocation(12, 2), sprites.castle.tileDarkGrass3)
+    info.setScore(0)
     for (let index = 0; index < 20; index++) {
         黄宇恩ghost = sprites.create(img`
             ........................
@@ -205,15 +242,17 @@ info.onCountdownEnd(function () {
             ........................
             ........................
             `, SpriteKind.黄宇恩鬼)
-        黄宇恩ghost.setVelocity(randint(-100, 100), randint(-100, 100))
-        黄宇恩ghost.setPosition(randint(50, 180), randint(20, 100))
+        hyesuduweizhi(黄宇恩ghost)
     }
     黄宇恩肯定3 = 1
     game.splash("鬼们正在跳舞，趁机逃走吧！")
     game.splash("别忘了用子弹！")
     sprite_list = sprites.allOfKind(SpriteKind.黄宇恩鬼)
     hyehero.setPosition(16, 96)
-    info.setScore(0)
+    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩great)
+    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩bad)
+    cubicbird.destroyAllSpriteOfKind(SpriteKind.黄宇恩其他)
+    cubicbird.destroyAllSpriteOfKind(SpriteKind.hyefood)
 })
 scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`hyetile8`, function (sprite, location) {
     if (hyekending == 1) {
@@ -222,6 +261,7 @@ scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`hyetile8`, function (sprit
         game.splash("绿：我下面没有钥匙")
         game.splash("绿是对的，红是错的，黄会谁便说。")
         game.splash("请挖开正确的洞")
+        game.splash("错误的洞里有蛇")
     }
     hyekending = 0
 })
@@ -372,11 +412,16 @@ function 苹果 () {
         `, SpriteKind.黄宇恩bad)
     tiles.placeOnRandomTile(黄宇恩苹果红, sprites.dungeon.greenOuterSouth2)
     黄宇恩苹果红.follow(hyehero, 50)
-    pause(1000)
+    pause(500)
+}
+function hyesuduweizhi (hyeghost: Sprite) {
+    hyeghost.setVelocity(randint(-100, 100), randint(-100, 100))
+    hyeghost.setPosition(randint(50, 180), randint(20, 100))
 }
 scene.onOverlapTile(SpriteKind.hyeplayer, sprites.builtin.forestTiles24, function (sprite, location) {
-    if (!(钥匙1数 == 1)) {
+    if (钥匙1数 == 0) {
         hyehero.x += -10
+        game.splash("没有钥匙")
     }
 })
 scene.onOverlapTile(SpriteKind.hyeplayer, assets.tile`hyetile2`, function (sprite, location) {
@@ -467,6 +512,10 @@ sprites.onOverlap(SpriteKind.hyeplayer, SpriteKind.黄宇恩其他, function (sp
 })
 
 tiles.setTilemap(tilemap`hyelevel_1`)
+黄宇恩_tile_list3 = tiles.getTilesByType(sprites.builtin.forestTiles24)
+黄宇恩tile_list2 = tiles.getTilesByType(sprites.builtin.forestTiles29)
+黄宇恩tail_list1 = tiles.getTilesByType(sprites.dungeon.greenOuterSouth2)
+黄宇恩tail_list4 = tiles.getTilesByType(sprites.builtin.forestTiles3)
 hyehero = sprites.create(img`
     . . . . . . f f f f . . . . . . 
     . . . . f f f 2 2 f f f . . . . 
@@ -547,6 +596,15 @@ hyehero.setPosition(38, 31)
 hyebaoxiang2.setPosition(136, 15)
 hyebaoxiang3.setPosition(82, 110)
 forever(function () {
+    if (黄宇恩肯定 == 3) {
+        info.startCountdown(30)
+        黄宇恩肯定 = 1
+    }
+    if (黄宇恩肯定 == 1) {
+        苹果()
+    }
+})
+forever(function () {
     if (黄宇恩肯定3 == 1) {
         if (info.score() >= 10) {
             结束()
@@ -556,7 +614,7 @@ forever(function () {
 })
 forever(function () {
     if (黄宇恩肯定 == 1) {
-        if (info.life() <= -10) {
+        if (info.score() <= -10) {
             结束()
             gamejam.roomFinished(false)
         }
@@ -566,18 +624,8 @@ forever(function () {
     if (黄宇恩肯定3 == 1) {
         for (let 值 of sprite_list) {
             值.setVelocity(randint(-100, 100), randint(-100, 100))
-            pause(1000)
         }
-    }
-})
-forever(function () {
-    if (黄宇恩肯定 == 3) {
-        苹果()
-        info.startCountdown(4)
-        黄宇恩肯定 = 1
-    }
-    if (黄宇恩肯定 == 1) {
-        苹果()
+        pause(1000)
     }
 })
 forever(function () {
@@ -586,5 +634,4 @@ forever(function () {
         gamejam.roomFinished(false)
     }
 })
-    }
-    }
+    }}
