@@ -54,7 +54,7 @@ namespace myTiles {
     //% fixedInstance jres blockIdentity=images._tile
     export const wjytile19 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
-    export const wjytile20 = image.ofBuffer(hex``);
+    export const wjytile22 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
     export const wjytile21 = image.ofBuffer(hex``);
     //% fixedInstance jres blockIdentity=images._tile
@@ -216,7 +216,7 @@ case "lizilevel1":return tiles.createTilemap(hex`1000100002040301010301010101030
           case "wjytile17":return wjytile17;
           case "wjytile18":return wjytile18;
           case "wjytile19":return wjytile19;
-          case "wjytile20":return wjytile20;
+          case "wjytile22":return wjytile22;
           case "wjytile21":return wjytile21;
           case "wjytile23":return wjytile23;
           case "wjytile25":return wjytile25;
